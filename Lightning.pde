@@ -6,7 +6,6 @@ void setup()
 {
   size(600,300);
   background(0);
-  
 }
 void draw()
 {
@@ -14,7 +13,7 @@ void draw()
 	teslaCoil(50, 270);
 	teslaCoil(500, 270);
 	strokeWeight(5);
-	stroke((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
+	stroke((int)(Math.random()*51) + 200, (int)(Math.random()*71) + 180, (int)(Math.random()*81));
 	while(endX < 510)
 	{
 		endX = startX + (int)(Math.random()*9);
@@ -24,7 +23,7 @@ void draw()
 		}
 		else if(startX > 275) // Second half of the lightning; weighted randomness
 		{
-			if(startY > 155) // If lightning is above wanted end Y
+			if(startY > 160) // If lightning is above wanted end Y
 			{
 				if(Math.random() < .8)
 				{	
@@ -35,7 +34,7 @@ void draw()
 					endY = startY + (int)(Math.random()*9);
 				}
 			}
-			else if(startY < 175) // If lightning is below wanted end Y
+			else if(startY < 170) // If lightning is below wanted end Y
 			{
 				if (Math.random() < .8)
 				{
@@ -54,14 +53,18 @@ void draw()
 		line(startX, startY, endX, endY);
 		startX = endX;
 		startY = endY;
+		
 	}
 }
 void mousePressed()
 {
-	startX = 95;
-	startY = 155;
+	if(mousePressed)
+	{
+		startX = 95;
+	startY = (int)(Math.random() * 11) + 150;
 	endX = 95 ;
-	endY = 155;
+	endY = startY;
+	}
 }
 void teslaCoil(int x,int y)
 {
