@@ -12,7 +12,7 @@ void draw()
 	background(0);
 	teslaCoil(50, 270);
 	teslaCoil(500, 270);
-	strokeWeight(5);
+	strokeWeight(3);
 	stroke((int)(Math.random()*51) + 200, (int)(Math.random()*71) + 180, (int)(Math.random()*81));
 	while(endX < 510)
 	{
@@ -53,18 +53,14 @@ void draw()
 		line(startX, startY, endX, endY);
 		startX = endX;
 		startY = endY;
-		
 	}
 }
 void mousePressed()
 {
-	if(mousePressed)
-	{
-		startX = 95;
+	startX = 95;
 	startY = (int)(Math.random() * 11) + 150;
 	endX = 95 ;
 	endY = startY;
-	}
 }
 void teslaCoil(int x,int y)
 {
